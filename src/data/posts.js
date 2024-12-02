@@ -2,7 +2,7 @@
  * Alcuni post dovranno rimanere senza immagine, quindi avere la proprietà image = undefined
  */
 
-export const posts = [
+const posts = [
 	{
 		id: 1,
 		title: 'Titolo del Post',
@@ -40,3 +40,5 @@ export const posts = [
 		published: false,
 	},
 ]
+
+export default posts

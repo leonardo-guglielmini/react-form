@@ -1,12 +1,45 @@
 import style from "./main.module.css"
 import Card from "./ui/Card/card"
-import {posts} from "../data/posts"
+import basePosts from "../data/posts"
+
+import { useState } from 'react'
 const tags = []
 
 export default function Main(){
+
+
+    const [posts, setPosts] = useState(basePosts)
+    const [newPostTitle, setNewPostTitle] = useState("")
+
+    function onSubmit(event){
+        event.preventDefault()
+
+        if(newPostTitle === "") return
+
+        const newPost ={
+            id: posts.at(-1).id+1,
+            title: newPostTitle,
+            image: undefined,
+            content: "",
+            tags:[],
+            published:true
+        }
+
+        setPosts([...posts, newPost])
+        setNewPostTitle("")
+
+        console.log("post aggiunto correttamente")
+        //console.log(posts)
+    }
+
+
     return(
         <main className={style.mainContent}>
             <div className="container">
+                <form onSubmit={onSubmit} action="">
+                        <input  onChange={(e)=>setNewPostTitle(e.target.value)} type="text" placeholder="Titolo del post" value={newPostTitle}/>
+                        <input type="submit" value="Invia"/>
+                </form>
 
                 <section className={style.row}>
                     {posts.map((post)=>

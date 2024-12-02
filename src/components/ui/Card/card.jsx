@@ -1,4 +1,7 @@
 /* eslint-disable react/prop-types */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
 import placeholderImg from "../../../assets/placeholder.webp"
 import style from "./card.module.css"
 
@@ -16,6 +19,7 @@ export default function Card({title ="", image, content="",tags=""}){
                     <p>{content}</p>
                     {tags.map((tag,index) => <p className={`tag ${tag}Tag`} key={index}>{tag}</p>)}
                     <button><a href="#">Leggi di più</a></button>
+                    <button><FontAwesomeIcon icon={faTrash}/></button>
                 </div>
             </div>
         </div>
