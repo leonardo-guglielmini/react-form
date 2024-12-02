@@ -7,7 +7,7 @@ import style from "./card.module.css"
 
 
 
-export default function Card({title ="", image, content="",tags=""}){
+export default function Card({callback =()=>{}, title ="", image, content="",tags=""}){
     return(
         <div className={style.card}>
             <div className={style.col12}>
@@ -18,8 +18,10 @@ export default function Card({title ="", image, content="",tags=""}){
                     <h3>{title}</h3>
                     <p>{content}</p>
                     {tags.map((tag,index) => <p className={`tag ${tag}Tag`} key={index}>{tag}</p>)}
-                    <button><a href="#">Leggi di più</a></button>
-                    <button><FontAwesomeIcon icon={faTrash}/></button>
+                    <div className={style.btnSection}>
+                        <button><a href="#">Leggi di più</a></button>
+                        <button onClick={()=>callback()}><FontAwesomeIcon icon={faTrash} className={style.faTrash}/></button>
+                    </div> 
                 </div>
             </div>
         </div>

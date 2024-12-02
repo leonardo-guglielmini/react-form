@@ -32,6 +32,10 @@ export default function Main(){
         //console.log(posts)
     }
 
+    function deletePost(id){
+        setPosts(posts.filter(post=> post.id!=id))
+    }
+
 
     return(
         <main className={style.mainContent}>
@@ -45,7 +49,7 @@ export default function Main(){
                     {posts.map((post)=>
                         post.published===true ?
                         <div className={style.col3} key={post.id}>
-                            <Card title={post.title} image={post.image} content={post.content} tags={post.tags} published={post.    published}/>
+                            <Card callback={()=>deletePost(post.id)} title={post.title} image={post.image} content={post.content} tags={post.tags} published={post.    published}/>
                             {post.tags.forEach(tag => !tags.find((tagEl) => tagEl === tag) ? tags.push(tag) : null)}
                         </div> : null
                     )}

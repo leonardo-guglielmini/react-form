@@ -23,6 +23,7 @@
         font-weight: bold;
     }
     button{
+        cursor: pointer;
         display: block;
         margin: 1rem 0;
         padding: 0.5rem;
@@ -37,4 +38,13 @@
 
 .col12{
     width: 100%;
+}
+
+.btnSection{
+    display: flex;
+    justify-content: space-between;
+}
+
+.faTrash{
+    color: white;
 }
