@@ -40,11 +40,11 @@ export default function Main(){
     return(
         <main className={style.mainContent}>
             <div className="container">
-                <form onSubmit={onSubmit} action="">
+                <form className={style.form} onSubmit={onSubmit} action="">
                         <input  onChange={(e)=>setNewPostTitle(e.target.value)} type="text" placeholder="Titolo del post" value={newPostTitle}/>
                         <input  onChange={(e)=>setNewPostContent(e.target.value)} type="text" placeholder="Descrizione del post" value={newPostContent}/>
-                        <input  onChange={(e)=>setNewPostTags(e.target.value)} type="text" placeholder="Tags del post" value={newPostTags}/>
-                        <input type="submit" value="Invia"/>
+                        <input onChange={(e)=>setNewPostTags(e.target.value)} type="text" placeholder="Tags del post" value={newPostTags}/>
+                        <input className={style.submit} type="submit" value="Invia"/>
                 </form>
 
                 <section className={style.row}>
