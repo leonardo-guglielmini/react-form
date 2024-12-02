@@ -1,0 +1,22 @@
+.mainContent{
+    padding-bottom: 3rem;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col3{
+    width: 45%;
+    padding-bottom: 1rem;
+}
+
+.tagList{
+    margin: 1rem auto;
+    width: 50%;
+    text-align: center;
+    border: 0.1rem solid grey;
+    background-color: bisque;
+}
